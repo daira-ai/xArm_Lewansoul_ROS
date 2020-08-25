@@ -1,0 +1,21 @@
+<launch>
+    <rosparam file="$(find xarm_hardware_interface)/config/hardware.yaml" command="load"/>
+    <rosparam file="$(find xarm_hardware_interface)/config/controllers.yaml" command="load"/>
+    <rosparam file="$(find xarm_hardware_interface)/config/joint_limits.yaml" command="load"/>
+    <node name="xarm_hardware_interface" pkg="xarm_hardware_interface" type="xarm_hardware_interface_node" output="screen"/>
+    
+    
+    <rosparam file="$(find xarm_launch)/config/xarm_trajectory_controller.yaml" command="load"/>
+    <arg name="initial_z" default="0.1"/>
+    <arg name="robot_description" default="'$(find xarm_description)/urdf/xarm_world.urdf.xacro'"/>
+    <param name="robot_description" command="xacro $(arg robot_description) initial_z:=$(arg initial_z)"/>
+   
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
+        args="
+            /xarm/controller/state
+            /xarm/controller/position/xarm_6_joint
+            /xarm/controller/position/xarm_5_joint
+            /xarm/controller/position/xarm_4_joint
+            /xarm/controller/position/xarm_3_joint
+            /xarm/controller/position/xarm_2_joint"/>
+</launch>

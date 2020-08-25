@@ -1,0 +1,11 @@
+controller_list:
+  - name: fake_xarm_controller
+    joints:
+      - xarm_6_joint
+      - xarm_5_joint
+      - xarm_4_joint
+      - xarm_3_joint
+      - xarm_2_joint
+  - name: fake_arm_end_effector_controller
+    joints:
+      - xarm_2_joint

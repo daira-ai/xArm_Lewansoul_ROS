@@ -1,0 +1,263 @@
+<?xml version="1.0" ?>
+<robot name="xarm">
+    <material name="DarkGrey">
+        <color rgba="0.3 0.3 0.3 1.0" />
+    </material>
+    <material name="Red">
+        <color rgba="0.3 0.3 0.3 1.0" />
+    </material>
+    <material name="Black">
+        <color rgba="0 0 0 1.0" />
+    </material>
+    <material name="Orange">
+        <color rgba="0.0 0.15 0.7 1.0" />
+    </material>
+    <material name="Silver">
+        <color rgba="1.0 1.0 1.0 1.0" />
+    </material>
+    <material name="Grey">
+        <color rgba="0.7 0.7 0.7 1.0" />
+    </material>
+    <material name="Blue">
+        <color rgba="0.0 0.0 0.8 1.0" />
+    </material>
+    <material name="HandGray">
+        <color rgba="0.953 0.996 0.694 1.0" />
+    </material>
+    <material name="SickBlue">
+        <color rgba="0.3058 0.5921 0.7294 1.0" />
+    </material>
+    <property name="M_PI" value="3.1415926535897931" />
+    <link name="xarm_base_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://xarm_description/meshes/stls/base.stl" scale="1.0 1.0 1.0" />
+            </geometry>
+            <material name="Blue" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://xarm_description/meshes/stls/base.stl" scale="1.0 1.0 1.0" />
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link>
+
+    <link name="xarm_6_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://xarm_description/meshes/stls/link6.stl" scale="1.0 1.0 1.0" />
+            </geometry>
+            <material name="DarkGrey" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://xarm_description/meshes/stls/link6.stl" scale="1.0 1.0 1.0" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link>
+
+    <link name="xarm_5_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://xarm_description/meshes/stls/link5.stl" scale="1.0 1.0 1.0" />
+            </geometry>
+            <material name="Blue" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://xarm_description/meshes/stls/link5.stl" scale="1.0 1.0 1.0" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link>
+
+    <link name="xarm_4_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://xarm_description/meshes/stls/link4.stl" scale="1.0 1.0 1.0" />
+            </geometry>
+            <material name="DarkGrey" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://xarm_description/meshes/stls/link4.stl" scale="1.0 1.0 1.0" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link>
+
+    <link name="xarm_3_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://xarm_description/meshes/stls/link3.stl" scale="1.0 1.0 1.0" />
+            </geometry>
+            <material name="Blue" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://xarm_description/meshes/stls/link3.stl" scale="1.0 1.0 1.0" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link>
+
+    <link name="xarm_2_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://xarm_description/meshes/stls/link2.stl" scale="1.0 1.0 1.0" />
+            </geometry>
+            <material name="DarkGrey" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://xarm_description/meshes/stls/link2.stl" scale="1.0 1.0 1.0" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link>
+    
+    <joint name="xarm_6_joint" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0.0 0.03603" />
+        <axis xyz="0 0 1" />
+        <limit effort="1000" lower="-1.737238322" upper="1.79965407" velocity="1.0" />
+        <!--safety_controller k_position="30" k_velocity="30" soft_lower_limit="-2.93215314335" soft_upper_limit="2.93215314335"/>
+        <dynamics damping="1.0"/-->
+        <parent link="xarm_base_link" />
+        <child link="xarm_6_link" />
+    </joint>
+
+    <joint name="xarm_5_joint" type="revolute">
+        <origin rpy="0 0 0" xyz="0 -0.0022 0.03195" />
+        <axis xyz="1 0 0" />
+        <limit effort="1000" lower="-1.592023304" upper="1.86797401" velocity="1.0" />
+        <!--safety_controller k_position="30" k_velocity="30" soft_lower_limit="-2.93215314335" soft_upper_limit="2.93215314335"/>
+        <dynamics damping="1.0"/-->
+        <parent link="xarm_6_link" />
+        <child link="xarm_5_link" />
+    </joint>
+
+    <joint name="xarm_4_joint" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0.0 0.09765" />
+        <axis xyz="1 0 0" />
+        <limit effort="1000" lower="-1.910427965" upper="1.910427965" velocity="1.0" />
+        <!--safety_controller k_position="30" k_velocity="30" soft_lower_limit="-2.93215314335" soft_upper_limit="2.93215314335"/>
+        <dynamics damping="1.0"/-->
+        <parent link="xarm_5_link" />
+        <child link="xarm_4_link" />
+    </joint>
+
+    <joint name="xarm_3_joint" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0.0 0.09825" />
+        <axis xyz="1 0 0" />
+        <limit effort="1000" lower="-1.740612146" upper="1.86797401" velocity="1.0" />
+        <!--safety_controller k_position="30" k_velocity="30" soft_lower_limit="-2.93215314335" soft_upper_limit="2.93215314335"/>
+        <dynamics damping="1.0"/-->
+        <parent link="xarm_4_link" />
+        <child link="xarm_3_link" />
+    </joint>
+
+    <joint name="xarm_2_joint" type="revolute">
+        <origin rpy="0 0 0" xyz="0 -0.001205 0.05306" />
+        <axis xyz="0 0 1" />
+        <limit effort="1000" lower="-2.17494876" upper="1.63121157" velocity="1.0" />
+        <!--safety_controller k_position="30" k_velocity="30" soft_lower_limit="-2.93215314335" soft_upper_limit="2.93215314335"/>
+        <dynamics damping="1.0"/-->
+        <parent link="xarm_3_link" />
+        <child link="xarm_2_link" />
+    </joint>
+
+    
+    <transmission name="trans_xarm_6_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="xarm_6_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="xarm_6_joint_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_xarm_5_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="xarm_5_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="xarm_5_joint_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_xarm_4_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="xarm_4_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="xarm_4_joint_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_xarm_3_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="xarm_3_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="xarm_3_joint_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <transmission name="trans_xarm_2_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="xarm_2_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="xarm_2_joint_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>
