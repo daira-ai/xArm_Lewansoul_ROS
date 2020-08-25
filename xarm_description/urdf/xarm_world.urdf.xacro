@@ -1,0 +1,12 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="xarm">
+
+    <xacro:include filename="$(find xarm_description)/urdf/xarm.urdf"/>
+    <link name="world"/>
+    <xacro:arg name="initial_z" default="0.0"/>
+
+    <joint name="world_joint" type="fixed">
+        <parent link="world"/>
+        <child link="xarm_base_link"/>
+        <origin xyz="0.0 0.0 $(arg initial_z)" rpy="0.0 0.0 0.0"/>
+    </joint>
+</robot>

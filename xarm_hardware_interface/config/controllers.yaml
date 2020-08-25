@@ -1,0 +1,28 @@
+xarm:
+  controller:
+    state:
+      type: joint_state_controller/JointStateController
+      publish_rate: 50
+    position:
+      
+      xarm_2_joint:
+        type: position_controllers/JointPositionController
+        joint: xarm_2_joint
+       
+      xarm_3_joint:
+        type: position_controllers/JointPositionController
+        joint: xarm_3_joint
+     
+      xarm_4_joint:
+        type: position_controllers/JointPositionController
+        joint: xarm_4_joint
+             
+      xarm_5_joint:
+        type: position_controllers/JointPositionController
+        joint: xarm_5_joint
+      
+      xarm_6_joint:
+        type: position_controllers/JointPositionController
+        joint: xarm_6_joint
+       
+      

@@ -1,0 +1,10 @@
+xarm:
+  hardware_interface:
+    loop_hz: 10 # hz
+    joints:
+      - xarm_2_joint
+      - xarm_3_joint
+      - xarm_4_joint
+      - xarm_5_joint
+      - xarm_6_joint
+     
