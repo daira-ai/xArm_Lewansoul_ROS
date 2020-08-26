@@ -1,4 +1,4 @@
-# xArm Lewansoul ROS documentation
+# xArm Lewansoul ROS Documentation
 
 
 ```eval_rst   
@@ -7,4 +7,4 @@
    :caption: Overview
    
    user_guide/1_1_introduction
-   
+```
