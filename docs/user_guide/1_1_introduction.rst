@@ -23,22 +23,23 @@ Install package dependencies
    sudo pip install --upgrade setuptools
    sudo pip install hidapi
 
-Install package dependencies
+Install HIDAPI
 --------------------
 
-Now we are using hidapi from  https://github.com/libusb/hidapi; it is the same people but seems more updated. 
-Steps  to compile hidapi:
-Clone hidapi repo from libusb 
-Install dependencies as mentioned in the readme of the repository.
-Run all the commands to build as mentioned in the readme of the repository.
-./bootstrap
-./configure
-make
-Sudo make install 
-Include in your cpp or h: #include <hidapi/hidapi.h>
-Configure your cMakeList: 
-target_link_libraries(xarm_hardware_interface
-xarm
-hidapi-hidraw
-${catkin_LIBRARIES})
+# Clone hidapi from  https://github.com/libusb/hidapi
 
+# Install dependencies as mentioned in hidapi repository
+
+  .. prompt:: bash $
+
+     sudo apt-get install libudev-dev libusb-1.0-0-dev libfox-1.6-dev
+     sudo apt-get install autotools-dev autoconf automake libtool
+
+# Run all the commands to build as mentioned in the readme of the repository
+  
+  .. prompt:: bash $
+
+     ./bootstrap
+     ./configure
+     make
+     sudo make install 
