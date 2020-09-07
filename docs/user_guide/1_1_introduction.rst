@@ -1,7 +1,10 @@
 About
 ===================
 
-Figure
+.. figure:: ../img/xArm.png
+    :width: 100%
+    :align: center
+    :alt: xArm Lewansoul Robot
 
 Install
 ===================
