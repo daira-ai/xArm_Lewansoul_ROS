@@ -30,16 +30,16 @@ Install HIDAPI
 
 #. Install dependencies as mentioned in hidapi repository
 
-  .. prompt:: bash $
+   .. prompt:: bash $
 
-     sudo apt-get install libudev-dev libusb-1.0-0-dev libfox-1.6-dev
-     sudo apt-get install autotools-dev autoconf automake libtool
+      sudo apt-get install libudev-dev libusb-1.0-0-dev libfox-1.6-dev
+      sudo apt-get install autotools-dev autoconf automake libtool
 
 #. Run all the commands to build as mentioned in the readme of the repository
-  
-  .. prompt:: bash $
 
-     ./bootstrap
-     ./configure
-     make
-     sudo make install 
+   .. prompt:: bash $
+
+      ./bootstrap
+      ./configure
+      make
+      sudo make install 
