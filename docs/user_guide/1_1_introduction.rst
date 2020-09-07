@@ -2,7 +2,7 @@ About
 ===================
 
 .. figure:: ../img/xArm.png
-    :width: 100%
+    :width: 50%
     :align: center
     :alt: xArm Lewansoul Robot
 
@@ -31,14 +31,14 @@ Install HIDAPI
 
 #. Clone hidapi from  https://github.com/libusb/hidapi
 
-#. Install dependencies as mentioned in hidapi repository
+#. Install dependencies as mentioned in hidapi repository:
 
    .. prompt:: bash $
 
       sudo apt-get install libudev-dev libusb-1.0-0-dev libfox-1.6-dev
       sudo apt-get install autotools-dev autoconf automake libtool
 
-#. Run all the commands to build as mentioned in the readme of the repository
+#. Run all the commands to build as mentioned in the readme of the repository:
 
    .. prompt:: bash $
 
