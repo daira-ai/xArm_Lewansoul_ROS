@@ -46,3 +46,100 @@ Install HIDAPI
       ./configure
       make
       sudo make install 
+      
+Build xArm_Lewansoul_ROS
+--------------------
+
+#. Clone this repository
+
+   .. prompt:: bash $
+   
+      git clone https://github.com/diestra-ai/xArm_Lewansoul_ROS.git
+      
+#. Build
+
+   .. prompt:: bash $
+   
+      catkin_make
+      
+
+Run xArm_Lewansoul_ROS
+===================
+
+#. Connect the robot to any USB port of your computer 
+
+#. Turn the robot on.
+   You should see the pink and blue lights on the control card. 
+   
+#. To control the robot with code you sould be in sudo mode
+   
+   .. prompt:: bash $
+   
+      sudo -s
+
+#. Run the following script to check the computer is  able to detect and control the robot.
+   You should be in the folder of xArm_Lewansoul_ROS
+   
+   .. prompt:: bash $
+   
+      python xarm_hardware_interface/scripts/controller.py 
+      
+   If the robot is correctly detected you should see the following output:
+   
+   .. figure:: ../img/python_output.png
+      :width: 30%
+      :align: left
+   
+   and robot should move to a vertical position and then open and close the gripper followed by rotating its second and third joints.
+   
+   With this python file you can use different functions to control the robot. 
+   
+   If the robot is not detected the following output would appear:
+   
+   .. figure:: ../img/python_output_error.png
+      :width: 30%
+      :align: left
+    
+   in this case check that the robot is on and that you are running from sudo mode, or try another USB port or cable. Also maybe restart the system.  
+      
+ #. Control the robot using ROS
+ 
+    To have the robot running in ROS, launch the following
+        
+    .. prompt:: bash $
+    
+       roslaunch xarm_launch xarm.launch
+     
+    If the robot 
+       
+       
+    
+ 
+
+   
+
+   
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
