@@ -87,7 +87,7 @@ Run xArm_Lewansoul_ROS
    If the robot is correctly detected you should see the following output:
    
    .. figure:: ../img/python_output.png
-      :width: 30%
+      :width: 50%
       :align: left
    
    and robot should move to a vertical position and then open and close the gripper followed by rotating its second and third joints.
@@ -95,7 +95,7 @@ Run xArm_Lewansoul_ROS
    If the robot is not detected the following output would appear:
    
    .. figure:: ../img/python_output_error.png
-      :width: 30%
+      :width: 50%
       :align: left
     
    in this case check that the robot is on and that you are running from sudo mode, or try another USB port or cable. Also maybe restart the system.  
@@ -104,13 +104,13 @@ Run xArm_Lewansoul_ROS
    
 #. Control the robot using ROS
  
-    To have the robot running in ROS, launch the following
+   To have the robot running in ROS, launch the following
         
-    .. prompt:: bash $
+   .. prompt:: bash $
     
-       roslaunch xarm_launch xarm.launch
+      roslaunch xarm_launch xarm.launch
      
-    If the robot 
+   
        
        
     
