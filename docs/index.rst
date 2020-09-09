@@ -3,7 +3,7 @@ xArm Lewansoul ROS Documentation
 
 This is the documentation for ROS integration of the `Lewansoul-Hiwonder xArm <https://www.hiwonder.hk/collections/robotic-arm/products/xarm-hiwonder-6dof-bus-servo-robotic-arm-based-on-scratch-arduino-programmable-robotic-arm>`_.
 
-.. figure:: img/xArm.png
+.. figure:: img/xarm_2048x2048.jpg
     :width: 50%
     :align: center
     :alt: xArm Lewansoul Robot
