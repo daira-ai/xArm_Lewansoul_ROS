@@ -19,6 +19,12 @@ Here you will find:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Overview
+   :caption: Get started
    
    user_guide/1_1_introduction
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Software description
+   
+   user_guide/1_2_software_description.rst
