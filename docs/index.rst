@@ -1,0 +1,24 @@
+xArm Lewansoul ROS Documentation
+================================
+
+This is the documentation for ROS integration of the `Lewansoul-Hiwonder xArm <https://www.hiwonder.hk/collections/robotic-arm/products/xarm-hiwonder-6dof-bus-servo-robotic-arm-based-on-scratch-arduino-programmable-robotic-arm>`_.
+
+.. figure:: ../img/xArm.png
+    :width: 50%
+    :align: center
+    :alt: xArm Lewansoul Robot
+    
+Here you will find:
+* Low level drivers to comunicate with the robot either in python or C++
+* Hardware interface to control the robot with either position or trajectory control
+* Integration with RVIZ and moveit including URDF and SRDF files which allow you to plan trajectories
+
+Note: At the moment the gripper has not been yet integrated.
+
+
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Overview
+   
+   user_guide/1_1_introduction
