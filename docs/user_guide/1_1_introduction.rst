@@ -55,8 +55,8 @@ Build xArm_Lewansoul_ROS
       catkin_make
       
 
-Run xArm_Lewansoul_ROS
-===================
+Run 
+====
 
 #. Connect the robot to any USB port of your computer 
 
