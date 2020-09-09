@@ -12,7 +12,7 @@ Here you will find:
 
 * Low level drivers to comunicate with the robot either in python or C++
 * Hardware interface to control the robot with either position or trajectory control
-* Integration with RVIZ and moveit including URDF and SRDF files which allow you to plan trajectories
+* Integration with RVIZ and Moveit! including URDF and SRDF files which allow you to plan trajectories
 
 .. note::
    At the moment the gripper has not been yet integrated.
