@@ -48,12 +48,11 @@ The following are the set of available requests:
     ServoOffsetWrite     24  (byte)id (sbyte)offset
     BusServoMoroCtrl     26  (byte)id (byte)??? (ushort)speed
     
-Taking this information, we have created files to control the robot in python and c++.
+Taking this information, we have created files to control the robot in python and c++. We have subsequently used the c++ implementation to create the following robot interfaces but we have left the python one in case it is helpful for someone.
 
 Python driver
 *************
-We found the following implementation in python for this robot: https://gist.github.com/maximecb/7fd42439e8a28b9a74a4f7db68281071 (Author: Maxime Chevalier-Boisvert). We modified it and you can find it `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/melodic-devel/xarm_hardware_interface/scripts/controller.py>`_.
-
+We found the following `implementation in python for this robot <https://gist.github.com/maximecb/7fd42439e8a28b9a74a4f7db68281071>`_ (Author: Maxime Chevalier-Boisvert). We modified it and you can find it `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/melodic-devel/xarm_hardware_interface/scripts/controller.py>`_. 
 
 
 Hardware Interface
