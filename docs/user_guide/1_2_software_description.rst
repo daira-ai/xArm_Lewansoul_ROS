@@ -71,6 +71,7 @@ Starting from the python implementation, we have created the c++ version of it t
 
 Hardware Interface
 ==================
+We used `this following tutorial <https://www.slaterobotics.com/blog/5abd8a1ed4442a651de5cb5b/how-to-implement-ros_control-on-a-custom-robot>`_ to create the ros_control interfaces for this robot. You can find our implementation `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/tree/melodic-devel/xarm_hardware_interface>`_.
 
 URDFs
 =====
