@@ -8,6 +8,7 @@ A repository describing the communication protocol was found here: https://githu
 From there, we explain here the way to communicate with the robot.
 
 .. raw:: html
+
     <table>
     <thead><tr><th></th><th>id</th><th>header</th><th>length</th><th>command</th><th>parameters</th></tr></thead>
     <tbody>
@@ -16,7 +17,6 @@ From there, we explain here the way to communicate with the robot.
     </tbody>
     </table>
 
-Hola soy ariel
 
 Commands are essentially request packets embedded into USB HID reports. Requests and Reqponses are described in the following syntax:
 
