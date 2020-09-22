@@ -25,6 +25,7 @@ Commands are essentially request packets embedded into USB HID reports. Requests
 * Each field is described by the type in parentheses.
 * Curly braces denote that their content may be repeated more than once.
 
+.. raw:: html
 
     ServoMove             3  (byte)count (ushort)time { (byte)id (ushort)position }
     GroupRunRepeat        5  (byte)group[255=all] (byte)times 
