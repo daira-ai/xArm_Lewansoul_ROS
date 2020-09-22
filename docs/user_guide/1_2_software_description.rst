@@ -54,6 +54,20 @@ Python driver
 *************
 We found the following `implementation in python for this robot <https://gist.github.com/maximecb/7fd42439e8a28b9a74a4f7db68281071>`_ (Author: Maxime Chevalier-Boisvert). We modified it and you can find it `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/melodic-devel/xarm_hardware_interface/scripts/controller.py>`_. 
 
+To run it, turn the robot on and run the following:
+   
+.. prompt:: bash $
+
+  sudo -s  
+  python xarm_hardware_interface/scripts/controller.py 
+  
+There are some commands that will be executed as examples of how to control the robot. You should see the robot doing the following movements:
+* TODO: do a video
+
+C++ driver
+**********
+Starting from the python implementation, we have created the c++ version of it that you can find `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/melodic-devel/xarm_hardware_interface/src/xarm.cpp>`_
+
 
 Hardware Interface
 ==================
