@@ -26,6 +26,7 @@ Commands are essentially request packets embedded into USB HID reports. Requests
 * Curly braces denote that their content may be repeated more than once.
 
 ::
+
     ServoMove             3  (byte)count (ushort)time { (byte)id (ushort)position }
     GroupRunRepeat        5  (byte)group[255=all] (byte)times 
     GroupRun              6  (byte)group (ushort)count[0=continuous]
