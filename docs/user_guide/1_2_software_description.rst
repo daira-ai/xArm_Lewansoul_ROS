@@ -74,6 +74,11 @@ Running ``xarm.launch`` file will launch MoveIt! and RVIZ integration that will 
 .. prompt:: bash $
 
    roslaunch xarm_launch xarm.launch
+   
+.. figure:: img/xarm_RVIZ.jpg
+    :width: 50%
+    :align: center
+    :alt: xArm in RVIZ Interface
 
 We have integrated xArm with MoveIt! using MoveIt! Setup Assistant. `Here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/tree/f_documentation/xarm_moveit_config>`_. you can find the Moveit! configuration and the srdf file  `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/f_documentation/xarm_moveit_config/config/xarm.srdf>`_. 
 
