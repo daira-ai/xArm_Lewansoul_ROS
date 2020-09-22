@@ -16,6 +16,8 @@ From there, we explain here the way to communicate with the robot.
     </tbody>
     </table>
 
+Hola soy ariel
+
 Commands are essentially request packets embedded into USB HID reports. Requests and Reqponses are described in the following syntax:
 
 * Each field is seperated by a space.
@@ -61,7 +63,6 @@ Hardware Interface
 
 URDFs
 =====
-Hola Soy Caro
 https://grabcad.com/library/lewansoul-6dof-robot-arm-1
 
 RVIZ-Moveit!
