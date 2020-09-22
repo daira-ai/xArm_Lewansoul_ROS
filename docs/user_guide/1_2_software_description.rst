@@ -51,6 +51,15 @@ Commands are essentially request packets embedded into USB HID reports. Requests
                              (ushort)volt_max (ushort)temp_max (byte)led_status
                              (byte)led_warning (byte)dev_offset (ushort)pos (byte)temp
                              (ushort)volt
+                             
+::
+
+  Whitespace, newlines, blank lines, and
+  all kinds of markup (like *this* or
+  \this) is preserved by literal blocks.
+
+  The paragraph containing only '::'
+  will be omitted from the result.
 
 Communication with the control board:
 https://github.com/ccourson/LewanSoul-xArm
