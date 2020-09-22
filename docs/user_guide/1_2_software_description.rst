@@ -61,11 +61,38 @@ Hardware Interface
 
 URDFs
 =====
-Hola Soy Caro
-https://grabcad.com/library/lewansoul-6dof-robot-arm-1
+Meshes were taken from  https://grabcad.com/library/lewansoul-6dof-robot-arm-1, exported different links as single files using Solidworks. We defined the origin and change the orientation using Blender. 
 
-RVIZ-Moveit!
+Joints were defined in the URDF file. 
+
+.. warning::
+   At the moment we do not filled any information about inertia.  
+
+RVIZ-MoveIt!
 ============
+
+Launch command will launch MoveIt! and RVIZ integration that will allow you to plan trajectories. In this case the joints are controlled using trayectory controller. 
+
+.. prompt:: bash $
+
+   roslaunch xarm_launch xarm.launch
+
+We have integrated xArm with MoveIt! using MoveIt! Setup Assistant. `Here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/tree/f_documentation/xarm_moveit_config>`_. you can find the Moveit! configuration. 
+
+You can find the srdf `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/f_documentation/xarm_moveit_config/config/xarm.srdf>`_. 
+
+.. Note::
+   Control joints using position controller is also posible. If you want to do it, run this command:  
+   
+   .. prompt:: bash $
+
+      roslaunch xarm_hardware_interface xarm_position_controller.launch
+   
+   
+
+
+
+
 
 
 
