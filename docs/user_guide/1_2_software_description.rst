@@ -73,12 +73,42 @@ Hardware Interface
 ==================
 We used `this following tutorial <https://www.slaterobotics.com/blog/5abd8a1ed4442a651de5cb5b/how-to-implement-ros_control-on-a-custom-robot>`_ to create the ros_control interfaces for this robot. You can find our implementation `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/tree/melodic-devel/xarm_hardware_interface>`_.
 
-URDFs
+URDF
 =====
-https://grabcad.com/library/lewansoul-6dof-robot-arm-1
 
-RVIZ-Moveit!
+Meshes were taken from  https://grabcad.com/library/lewansoul-6dof-robot-arm-1. Different links were exported as single files using Solidworks. The origin and orientation were changed using Blender according with the axis of rotation of the real robot. Joints were defined in the `URDF file <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/melodic-devel/xarm_description/urdf/xarm.urdf>`_. 
+
+.. warning::
+   At the moment, there is no information about inertia.  
+
+RVIZ-MoveIt!
 ============
+
+Running ``xarm.launch`` file will launch MoveIt! and RVIZ integration that will allow you to plan trajectories. In this case the joints are controlled using trayectory controller. 
+
+.. prompt:: bash $
+
+   roslaunch xarm_launch xarm.launch
+   
+.. figure:: img/xarm_RVIZ.jpg
+    :width: 50%
+    :align: center
+    :alt: xArm in RVIZ Interface
+
+We have integrated xArm with MoveIt! using MoveIt! Setup Assistant. `Here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/tree/f_documentation/xarm_moveit_config>`_. you can find the Moveit! configuration and the srdf file  `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/f_documentation/xarm_moveit_config/config/xarm.srdf>`_. 
+
+.. Note::
+   You can control the robot using only position control using the following launch file: 
+   
+   .. prompt:: bash $
+
+      roslaunch xarm_hardware_interface xarm_position_controller.launch
+   
+   
+
+
+
+
 
 
 
