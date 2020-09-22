@@ -59,30 +59,26 @@ Author: Maxime Chevalier-Boisvert
 Hardware Interface
 ==================
 
-URDFs
+URDF
 =====
-Meshes were taken from  https://grabcad.com/library/lewansoul-6dof-robot-arm-1, exported different links as single files using Solidworks. We defined the origin and change the orientation using Blender. 
-
-Joints were defined in the URDF file. 
+Meshes were taken from  https://grabcad.com/library/lewansoul-6dof-robot-arm-1. Different links were exported as single files using Solidworks. The origin and orientation were changed using Blender according with the axis of rotation of the real robot. Joints were defined in the `URDF file <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/melodic-devel/xarm_description/urdf/xarm.urdf>`_. 
 
 .. warning::
-   At the moment we do not filled any information about inertia.  
+   At the moment, there is no information about inertia.  
 
 RVIZ-MoveIt!
 ============
 
-Launch command will launch MoveIt! and RVIZ integration that will allow you to plan trajectories. In this case the joints are controlled using trayectory controller. 
+Running ``xarm.launch`` file will launch MoveIt! and RVIZ integration that will allow you to plan trajectories. In this case the joints are controlled using trayectory controller. 
 
 .. prompt:: bash $
 
    roslaunch xarm_launch xarm.launch
 
-We have integrated xArm with MoveIt! using MoveIt! Setup Assistant. `Here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/tree/f_documentation/xarm_moveit_config>`_. you can find the Moveit! configuration. 
-
-You can find the srdf `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/f_documentation/xarm_moveit_config/config/xarm.srdf>`_. 
+We have integrated xArm with MoveIt! using MoveIt! Setup Assistant. `Here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/tree/f_documentation/xarm_moveit_config>`_. you can find the Moveit! configuration and the srdf file  `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/f_documentation/xarm_moveit_config/config/xarm.srdf>`_. 
 
 .. Note::
-   Control joints using position controller is also posible. If you want to do it, run this command:  
+   You can control the robot using only position control using the following launch file: 
    
    .. prompt:: bash $
 
