@@ -4,7 +4,8 @@ Driver Description
 USB Protocol
 ------------
 
-A repository describing the communication protocol was found here: https://github.com/ccourson/LewanSoul-xArm
+A repository describing the communication protocol was found here: https://github.com/ccourson/LewanSoul-xArm.
+
 From there, we explain here the way to communicate with the robot.
 
 .. raw:: html
