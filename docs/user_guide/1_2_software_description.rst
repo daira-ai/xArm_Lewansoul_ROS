@@ -7,13 +7,14 @@ USB Protocol
 A repository describing the communication protocol was found here: https://github.com/ccourson/LewanSoul-xArm
 From there, we explain here the way to communicate with the robot.
 
-<table>
-<thead><tr><th></th><th>id</th><th>header</th><th>length</th><th>command</th><th>parameters</th></tr></thead>
-<tbody>
-<tr><td><b>Bytes</b></td><td align="middle">1</td><td align="middle">2</td><td align="middle">1</td><td align="middle">1</td><td align="middle">0 or more</td></tr>
-<tr><td><b>Comments</b></td><td>Any number.</td><td>Always 0x5555.</td><td>Here to end.</td><td>See <i>commands</i>.</td><td>See <i>commands</i>.</td></tr>
-</tbody>
-</table>
+.. raw:: html
+    <table>
+    <thead><tr><th></th><th>id</th><th>header</th><th>length</th><th>command</th><th>parameters</th></tr></thead>
+    <tbody>
+    <tr><td><b>Bytes</b></td><td align="middle">1</td><td align="middle">2</td><td align="middle">1</td><td align="middle">1</td><td align="middle">0 or more</td></tr>
+    <tr><td><b>Comments</b></td><td>Any number.</td><td>Always 0x5555.</td><td>Here to end.</td><td>See <i>commands</i>.</td><td>See <i>commands</i>.</td></tr>
+    </tbody>
+    </table>
 
 Commands are essentially request packets embedded into USB HID reports. Requests and Reqponses are described in the following syntax:
 
@@ -60,7 +61,6 @@ Hardware Interface
 
 URDFs
 =====
-Hola soy Caro
 https://grabcad.com/library/lewansoul-6dof-robot-arm-1
 
 RVIZ-Moveit!
