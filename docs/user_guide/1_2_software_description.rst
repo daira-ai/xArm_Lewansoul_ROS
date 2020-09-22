@@ -6,7 +6,9 @@ USB Protocol
 
 A repository describing the communication protocol was found here: https://github.com/ccourson/LewanSoul-xArm.
 
-From there, we explain here the way to communicate with the robot.
+From there, we took the information about the protocol to communicate with the robot.
+
+A packet transmitted to the xArm will have the following format:
 
 .. raw:: html
 
@@ -19,11 +21,13 @@ From there, we explain here the way to communicate with the robot.
     </table>
 
 
-Commands are essentially request packets embedded into USB HID reports. Requests and Reqponses are described in the following syntax:
+Commands are essentially request packets embedded into USB HID reports. Requests and responses are described in the following syntax:
 
 * Each field is seperated by a space.
 * Each field is described by the type in parentheses.
 * Curly braces denote that their content may be repeated more than once.
+
+The following are the set of available requests:
 
 ::
 
@@ -44,30 +48,13 @@ Commands are essentially request packets embedded into USB HID reports. Requests
     ServoOffsetWrite     24  (byte)id (sbyte)offset
     BusServoMoroCtrl     26  (byte)id (byte)??? (ushort)speed
     
-    **These commands will affect all attached servos. Use these commands with only one servi attached.**
-    BusServoInfoWrite    27  (byte)id (ushort)pos_min (ushort)pos_max (ushort)volt_min
-                             (ushort)volt_max (ushort)temp_max (byte)led_status
-                             (byte)led_warning
-    BusServoInfoRead     28  -none-; (byte)id (ushort)pos_min (ushort)pos_max (ushort)volt_min
-                             (ushort)volt_max (ushort)temp_max (byte)led_status
-                             (byte)led_warning (byte)dev_offset (ushort)pos (byte)temp
-                             (ushort)volt
-                             
-::
+Taking this information, we have created files to control the robot in python and c++.
 
-  Whitespace, newlines, blank lines, and
-  all kinds of markup (like *this* or
-  \this) is preserved by literal blocks.
+Python driver
+*************
+We found the following implementation in python for this robot: https://gist.github.com/maximecb/7fd42439e8a28b9a74a4f7db68281071 (Author: Maxime Chevalier-Boisvert). We modified it and you can find it `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/melodic-devel/xarm_hardware_interface/scripts/controller.py>`_.
 
-  The paragraph containing only '::'
-  will be omitted from the result.
 
-Communication with the control board:
-https://github.com/ccourson/LewanSoul-xArm
-
-Driver python file modified from:
-From https://gist.github.com/maximecb/7fd42439e8a28b9a74a4f7db68281071
-Author: Maxime Chevalier-Boisvert
 
 Hardware Interface
 ==================
