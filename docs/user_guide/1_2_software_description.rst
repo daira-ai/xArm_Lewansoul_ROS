@@ -90,7 +90,7 @@ Running ``xarm.launch`` file will launch MoveIt! and RVIZ integration that will 
 
    roslaunch xarm_launch xarm.launch
    
-.. figure:: img/xarm_RVIZ.png
+.. figure:: ../img/xarm_RVIZ.png
    :width: 50%
    :align: center
    :alt: xArm in RVIZ Interface
