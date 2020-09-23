@@ -10,15 +10,13 @@ From there, we took the information about the protocol to communicate with the r
 
 A packet transmitted to the xArm will have the following format:
 
-.. raw:: html
-
-    <table>
-    <thead><tr><th></th><th>id</th><th>header</th><th>length</th><th>command</th><th>parameters</th></tr></thead>
-    <tbody>
-    <tr><td><b>Bytes</b></td><td align="middle">1</td><td align="middle">2</td><td align="middle">1</td><td align="middle">1</td><td align="middle">0 or more</td></tr>
-    <tr><td><b>Comments</b></td><td>Any number.</td><td>Always 0x5555.</td><td>Here to end.</td><td>See <i>commands</i>.</td><td>See <i>commands</i>.</td></tr>
-    </tbody>
-    </table>
++----------+-------------+----------------+--------------+---------------+---------------+
+|          |      id     |     header     |    length    |    command    |   parameters  |
++----------+-------------+----------------+--------------+---------------+---------------+
+| Bytes    | 1           | 2              | 1            | 1             | 0 or more     |
++----------+-------------+----------------+--------------+---------------+---------------+
+| Comments | Any number. | Always 0x5555. | Here to end. | See commands. | See commands. |
++----------+-------------+----------------+--------------+---------------+---------------+
 
 
 Commands are essentially request packets embedded into USB HID reports. Requests and responses are described in the following syntax:
@@ -68,7 +66,12 @@ C++ driver
 **********
 Starting from the python implementation, we have created the c++ version of it that you can find `here <https://github.com/diestra-ai/xArm_Lewansoul_ROS/blob/melodic-devel/xarm_hardware_interface/src/xarm.cpp>`_
 
-Since there is not information about the joint limits in the robot manual, we have manually found out the values in units and calculated their equivalent in radians by using the Lewansoul mobile app.
+Since there is not information about the joint limits in the robot manual, we have manually found out the values in units by using the Lewansoul mobile app. Then, we calculated their equivalent in radians setting the zero when the robot is in the vertical position as showing in the following picture:
+
+.. figure:: ../img/xarm_zero.png
+   :width: 50%
+   :align: center
+   :alt: Zero position
 
 +-------+---------------------------+
 | Joint |           Units           |
