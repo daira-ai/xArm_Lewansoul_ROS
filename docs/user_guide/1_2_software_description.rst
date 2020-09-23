@@ -59,8 +59,7 @@ To run it, turn the robot on and run the following:
   sudo -s  
   python xarm_hardware_interface/scripts/controller.py 
   
-There are some commands that will be executed as examples of how to control the robot. You should see the robot doing the following movements:
-* TODO: do a video
+There are some commands that will be executed as examples of how to control the robot. You should see the robot doing some movements.
 
 C++ driver
 **********
@@ -69,7 +68,7 @@ Starting from the python implementation, we have created the c++ version of it t
 Since there is not information about the joint limits in the robot manual, we have manually found out the values in units by using the Lewansoul mobile app. Then, we calculated their equivalent in radians setting the zero when the robot is in the vertical position as showing in the following picture:
 
 .. figure:: ../img/xarm_zero.png
-   :width: 50%
+   :width: 30%
    :align: center
    :alt: Zero position
 
@@ -128,7 +127,7 @@ Running ``xarm.launch`` file will launch MoveIt! and RVIZ integration that will 
    roslaunch xarm_launch xarm.launch
    
 .. figure:: ../img/xarm_RVIZ.png
-   :width: 50%
+   :width: 90%
    :align: center
    :alt: xArm in RVIZ Interface
 
