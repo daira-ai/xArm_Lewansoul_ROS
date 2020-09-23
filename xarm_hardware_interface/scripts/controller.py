@@ -188,12 +188,32 @@ def demo():
     arm = XArm()
     print arm.read_pos()
 
+    # Close gripper
+    arm.move_to(id=1, pos=685, time=1000)
+    time.sleep(2)
+
+    # Move Joint 4 
+    arm.move_to(id=4, pos=500, time=1000)
+    time.sleep(2)
+
+    # Move Joint 5 
+    arm.move_to(id=5, pos=500, time=1000)
+    time.sleep(2)  
+
+    # Move Joint 3 
+    arm.move_to(id=3, pos=500, time=1000)
+    time.sleep(2)
+
     # Open gripper
     arm.move_to(id=1, pos=115, time=1000)
     time.sleep(2)
 
     # Close gripper
     arm.move_to(id=1, pos=685, time=1000)
+    time.sleep(2)
+
+    # Move Joint 3 
+    arm.move_to(id=3, pos=150, time=1000)
     time.sleep(2)
 
     # Move Joint 2 
@@ -203,14 +223,5 @@ def demo():
     # Move Joint 2 
     arm.move_to(id=2, pos=590, time=1000)
     time.sleep(2)
-
-    # Move Joint 3 
-    arm.move_to(id=3, pos=500, time=1000)
-    time.sleep(2)
-    
-    # Move Joint 3 
-    arm.move_to(id=3, pos=150, time=1000)
-    time.sleep(2)
-
 
 demo()
