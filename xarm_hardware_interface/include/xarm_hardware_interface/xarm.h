@@ -17,6 +17,8 @@ namespace xarm
 			void  setJointPosition(std::string joint_name, double position_rad, int time); 
 			double convertUnitToRad(std::string joint_name, int unit);
 			int convertRadToUnit(std::string joint_name, double rad);
+			double convertUnitToGripperRatio(int unit);
+			int convertGripperRatioToUnit(double ratio);
 
 		private:
 			hid_device *handle;

@@ -50,12 +50,16 @@ namespace xarm
 		hid_free_enumeration(devs);
 
 		//Dictionary of joint_names to joint_id
+		joint_name_map.insert(std::make_pair("xarm_1_joint" , 1)); ///Changed
 		joint_name_map.insert(std::make_pair("xarm_2_joint" , 2));
 		joint_name_map.insert(std::make_pair("xarm_3_joint" , 3));
   		joint_name_map.insert(std::make_pair("xarm_4_joint" , 4));
 		joint_name_map.insert(std::make_pair("xarm_5_joint" , 5));
 		joint_name_map.insert(std::make_pair("xarm_6_joint" , 6));  
 		
+		
+		matrix_unit_transform["xarm_1_joint"][0][0]=200;
+		matrix_unit_transform["xarm_1_joint"][0][1]=980;
 		
 		matrix_unit_transform["xarm_2_joint"][0][0]=200;
 		matrix_unit_transform["xarm_2_joint"][0][1]=980;
@@ -68,19 +72,7 @@ namespace xarm
 		matrix_unit_transform["xarm_6_joint"][0][0]=90;
 		matrix_unit_transform["xarm_6_joint"][0][1]=845;
 
-		// First column values for -pi/2 and 2nd column pi/2
-		matrix_unit_rad[0][0] = 100;    //Gripper opened
-		matrix_unit_rad[0][1] = 800;    //Gripper closed
-		matrix_unit_rad[1][0] = 200; 	/*  Joint 2 */
-		matrix_unit_rad[1][1] = 980;  
-   		matrix_unit_rad[2][0] = 140;	/*  Joint 3*/
-		matrix_unit_rad[2][1] = 880;   
-   		matrix_unit_rad[3][0] = 130;	/*  Joint 4 */
-		matrix_unit_rad[3][1] = 870;   
-		matrix_unit_rad[4][0] = 140;	/*  Joint 5 */
-		matrix_unit_rad[4][1] = 880;    
-		matrix_unit_rad[5][0] = 90; 	/*  Joint 6 */
-		matrix_unit_rad[5][1] = 845;    
+		
 	}
 
 	xarm::~xarm()
@@ -125,6 +117,21 @@ namespace xarm
 		rad = (m*unit) + b;
 		return rad;
 	}
+
+	double xarm::convertUnitToGripperRatio(int unit)
+	{
+		double ratio;
+		ratio= (unit -matrix_unit_transform["xarm_1_joint"][0][0])/(matrix_unit_transform["xarm_1_joint"][0][1]-matrix_unit_transform["xarm_1_joint"][0][0]);
+		return ratio;
+	}
+
+	int xarm::convertGripperRatioToUnit(double ratio)
+	{
+		int unit;
+		unit = (ratio * (matrix_unit_transform["xarm_1_joint"][0][1]-matrix_unit_transform["xarm_1_joint"][0][0])) + matrix_unit_transform["xarm_1_joint"][0][0];
+		return unit;
+	}
+	
 	std::vector<double> xarm::readJointsPosition(std::vector<std::string> joint_names)
 	{
 		int res;
@@ -169,7 +176,12 @@ namespace xarm
 			p_lsb= buf[2+3*joint_id+1];
 			p_msb= buf[2+3*joint_id+2];
 			unit= (p_msb << 8) + p_lsb;
-			joint_positions[i] = convertUnitToRad(joint_names[i], unit);
+			if (joint_id == 1){
+				joint_positions[i] = convertUnitToGripperRatio(unit);
+			}
+			else {
+				joint_positions[i] = convertUnitToRad(joint_names[i], unit);
+			}
 			// printf("servo %d in joint_position %f \n", id, joint_positions[i]);
 		}
 
@@ -181,8 +193,14 @@ namespace xarm
 		unsigned char buf[65];
 		unsigned char t_lsb,t_msb, p_lsb, p_msb;
 		int res;
-		int position_unit = int(convertRadToUnit(joint_name, position_rad));
+		int position_unit; 
 		
+		if (joint_name_map[joint_name] == 1){
+			position_unit = int(convertGripperRatioToUnit(position_rad));
+		}
+		else {
+			position_unit = int(convertRadToUnit(joint_name, position_rad));
+		}
         t_lsb= time & 0xFF;
 		t_msb = time >> 8;
 		p_lsb = position_unit & 0xFF;
