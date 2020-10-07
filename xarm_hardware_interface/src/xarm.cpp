@@ -58,8 +58,8 @@ namespace xarm
 		joint_name_map.insert(std::make_pair("xarm_6_joint" , 6));  
 		
 		
-		matrix_unit_transform["xarm_1_joint"][0][0]=200;
-		matrix_unit_transform["xarm_1_joint"][0][1]=980;
+		matrix_unit_transform["xarm_1_joint"][0][0]=120;
+		matrix_unit_transform["xarm_1_joint"][0][1]=700;
 		
 		matrix_unit_transform["xarm_2_joint"][0][0]=200;
 		matrix_unit_transform["xarm_2_joint"][0][1]=980;
@@ -121,7 +121,8 @@ namespace xarm
 	double xarm::convertUnitToGripperRatio(int unit)
 	{
 		double ratio;
-		ratio= (unit -matrix_unit_transform["xarm_1_joint"][0][0])/(matrix_unit_transform["xarm_1_joint"][0][1]-matrix_unit_transform["xarm_1_joint"][0][0]);
+		ratio= (unit - matrix_unit_transform["xarm_1_joint"][0][0])/(matrix_unit_transform["xarm_1_joint"][0][1]-matrix_unit_transform["xarm_1_joint"][0][0]);
+		printf("Units: %d and Gripper ratio: %f \n", unit, ratio);
 		return ratio;
 	}
 
@@ -129,6 +130,7 @@ namespace xarm
 	{
 		int unit;
 		unit = (ratio * (matrix_unit_transform["xarm_1_joint"][0][1]-matrix_unit_transform["xarm_1_joint"][0][0])) + matrix_unit_transform["xarm_1_joint"][0][0];
+		printf("Gripper ratio: %f  and units: %d \n", ratio, unit);
 		return unit;
 	}
 	

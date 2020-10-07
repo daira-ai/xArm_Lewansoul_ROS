@@ -48,6 +48,6 @@ xarm:
 
     
     gripper: 
-      type: "position_controllers/GripperActionController"
+      type: position_controllers/GripperActionController
       joint:
         xarm_1_joint 
