@@ -26,7 +26,7 @@ xarm:
         joint: xarm_6_joint
        
     trajectory:
-      type: "position_controllers/JointTrajectoryController"
+      type: position_controllers/JointTrajectoryController
       joints:
         - xarm_6_joint
         - xarm_5_joint

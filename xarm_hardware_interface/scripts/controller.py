@@ -192,13 +192,13 @@ def demo():
     arm.move_to(id=1, pos=685, time=1000)
     time.sleep(2)
 
+    # Move Joint 5 
+    arm.move_to(id=5, pos=500, time=1000)
+    time.sleep(2) 
+
     # Move Joint 4 
     arm.move_to(id=4, pos=500, time=1000)
     time.sleep(2)
-
-    # Move Joint 5 
-    arm.move_to(id=5, pos=500, time=1000)
-    time.sleep(2)  
 
     # Move Joint 3 
     arm.move_to(id=3, pos=500, time=1000)

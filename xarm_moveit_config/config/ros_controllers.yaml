@@ -21,7 +21,7 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
 controller_list:
-  - name: xarm_controller
+  - name: /xarm/controller/trajectory
     action_ns: follow_joint_trajectory
     default: True
     type: FollowJointTrajectory
