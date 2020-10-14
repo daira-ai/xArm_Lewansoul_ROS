@@ -17,10 +17,12 @@ namespace xarm
 		// Initialize the hidapi library
 		if (hid_init())
 			return;
+
 		int found=0;
 		printDeviceInformation();
 		devs = hid_enumerate(0x0, 0x0);
-		cur_dev = devs;	
+		cur_dev = devs;
+
 		while (cur_dev) {
 					
 			std::wstring ws(cur_dev->product_string);
@@ -50,17 +52,18 @@ namespace xarm
 		hid_free_enumeration(devs);
 
 		//Dictionary of joint_names to joint_id
-		joint_name_map.insert(std::make_pair("xarm_1_joint" , 1)); ///Changed
+		joint_name_map.insert(std::make_pair("xarm_1_joint" , 1));
 		joint_name_map.insert(std::make_pair("xarm_2_joint" , 2));
 		joint_name_map.insert(std::make_pair("xarm_3_joint" , 3));
   		joint_name_map.insert(std::make_pair("xarm_4_joint" , 4));
 		joint_name_map.insert(std::make_pair("xarm_5_joint" , 5));
-		joint_name_map.insert(std::make_pair("xarm_6_joint" , 6));  
+		joint_name_map.insert(std::make_pair("xarm_6_joint" , 6));
 		
-		
-		matrix_unit_transform["xarm_1_joint"][0][0]=120;
-		matrix_unit_transform["xarm_1_joint"][0][1]=700;
-		
+		// Gripper
+		matrix_unit_transform["xarm_1_joint"][0][0]=123;
+		matrix_unit_transform["xarm_1_joint"][0][1]=680;
+
+		// Arm joints
 		matrix_unit_transform["xarm_2_joint"][0][0]=200;
 		matrix_unit_transform["xarm_2_joint"][0][1]=980;
 		matrix_unit_transform["xarm_3_joint"][0][0]=140;
@@ -71,8 +74,6 @@ namespace xarm
 		matrix_unit_transform["xarm_5_joint"][0][1]=880;
 		matrix_unit_transform["xarm_6_joint"][0][0]=90;
 		matrix_unit_transform["xarm_6_joint"][0][1]=845;
-
-		
 	}
 
 	xarm::~xarm()
@@ -121,7 +122,7 @@ namespace xarm
 	double xarm::convertUnitToGripperRatio(int unit)
 	{
 		double ratio;
-		ratio= (unit - matrix_unit_transform["xarm_1_joint"][0][0])/(matrix_unit_transform["xarm_1_joint"][0][1]-matrix_unit_transform["xarm_1_joint"][0][0]);
+		ratio= 1.0 - ((float(unit) - matrix_unit_transform["xarm_1_joint"][0][0])/(matrix_unit_transform["xarm_1_joint"][0][1]-matrix_unit_transform["xarm_1_joint"][0][0]));
 		printf("Units: %d and Gripper ratio: %f \n", unit, ratio);
 		return ratio;
 	}
@@ -129,7 +130,7 @@ namespace xarm
 	int xarm::convertGripperRatioToUnit(double ratio)
 	{
 		int unit;
-		unit = (ratio * (matrix_unit_transform["xarm_1_joint"][0][1]-matrix_unit_transform["xarm_1_joint"][0][0])) + matrix_unit_transform["xarm_1_joint"][0][0];
+		unit = int(((1.0 - ratio) * (matrix_unit_transform["xarm_1_joint"][0][1]-matrix_unit_transform["xarm_1_joint"][0][0])) + matrix_unit_transform["xarm_1_joint"][0][0]);
 		printf("Gripper ratio: %f  and units: %d \n", ratio, unit);
 		return unit;
 	}

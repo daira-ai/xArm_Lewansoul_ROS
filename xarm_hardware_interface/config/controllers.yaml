@@ -46,7 +46,6 @@ xarm:
       stop_trajectory_duration: 0.5
       allow_partial_joints_goal: true    
 
-    
     gripper: 
       type: position_controllers/GripperActionController
       joint:

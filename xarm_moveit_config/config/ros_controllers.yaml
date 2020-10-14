@@ -33,10 +33,10 @@ controller_list:
       - xarm_2_joint
 
   - name: /xarm/controller/gripper
-   action_ns: gripper_action
-   type: GripperCommand
-   default: true
-   parallel: true
-   joints:
+    action_ns: gripper_action
+    type: GripperCommand
+    default: true
+    parallel: true
+    joints:
       - xarm_1_joint
     
