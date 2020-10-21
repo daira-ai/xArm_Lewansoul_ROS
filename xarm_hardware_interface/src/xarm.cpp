@@ -122,18 +122,16 @@ namespace xarm
 	double xarm::convertUnitToGripperRatio(int unit)
 	{
 		double ratio;
-		//ratio= 1.0 - ((float(unit) - matrix_unit_transform["xarm_1_joint"][0][0])/(matrix_unit_transform["xarm_1_joint"][0][1]-matrix_unit_transform["xarm_1_joint"][0][0]));
-		ratio = cos(ConvertUnitToRad(unit))
-		printf("Units: %d and Gripper ratio: %f \n", unit, ratio);
+		ratio = cos(convertUnitToRad("xarm_1_joint", unit));
+		//printf("Units: %d and Gripper ratio: %f \n", unit, ratio);
 		return ratio;
 	}
 
 	int xarm::convertGripperRatioToUnit(double ratio)
 	{
 		int unit;
-		// unit = int(((1.0 - ratio) * (matrix_unit_transform["xarm_1_joint"][0][1]-matrix_unit_transform["xarm_1_joint"][0][0])) + matrix_unit_transform["xarm_1_joint"][0][0]);
-		unit = convertRadToUnit(acos(ratio))
-		printf("Gripper ratio: %f  and units: %d \n", ratio, unit);
+		unit = convertRadToUnit("xarm_1_joint", acos(ratio));
+		//printf("Gripper ratio: %f  and units: %d \n", ratio, unit);
 		return unit;
 	}
 	
