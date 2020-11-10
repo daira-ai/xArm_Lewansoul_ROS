@@ -12,6 +12,6 @@
         args="
             /xarm/controller/state
             /xarm/controller/trajectory
-                 
+            /xarm/controller/gripper
         "/> 
 </launch>
