@@ -153,14 +153,14 @@
         <visual>
             <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
             <geometry>
-                <box size="0.1 0.1 0.1"/>
+                <mesh filename="package://xarm_description/meshes/stls/gripper.stl" scale="1.0 1.0 1.0" />
             </geometry>
             <material name="DarkGrey" />
         </visual>
         <collision>
             <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
             <geometry>
-                <box size="0.1 0.1 0.1"/>
+                <mesh filename="package://xarm_description/meshes/stls/gripper.stl" scale="1.0 1.0 1.0" />
             </geometry>
         </collision>
         <inertial>
@@ -220,7 +220,7 @@
     </joint>
 
     <joint name="xarm_1_joint" type="revolute">
-        <origin rpy="0 0 0" xyz="0 -0.001205 0.05306" />
+        <origin rpy="0 0 0" xyz="0 0 0.007548" />
         <axis xyz="0 0 1" />
         <limit effort="1000" lower="0.0" upper="1.0" velocity="1.0" />
         <parent link="xarm_2_link" />
