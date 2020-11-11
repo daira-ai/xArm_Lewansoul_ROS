@@ -168,7 +168,28 @@
             <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
         </inertial>
     </link>
-    
+
+    <link name="xarm_gripper_tip" />
+    <!--link name="xarm_gripper_tip">
+        <visual>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <box size="0.005 0.005 0.005"/>
+            </geometry>
+            <material name="DarkGrey" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0" />
+            <geometry>
+                <box size="0.005 0.005 0.005"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link-->
+
     <joint name="xarm_6_joint" type="revolute">
         <origin rpy="0 0 0" xyz="0 0.0 0.03603" />
         <axis xyz="0 0 1" />
@@ -225,6 +246,12 @@
         <limit effort="1000" lower="0.0" upper="1.0" velocity="1.0" />
         <parent link="xarm_2_link" />
         <child link="xarm_1_link" />
+    </joint>
+
+    <joint name="xarm_gripper_tip_joint" type="fixed">
+      <parent link="xarm_2_link" />
+      <child link = "xarm_gripper_tip" />
+      <origin xyz="0.0 0.0 0.104639" rpy="0.0 0.0 0.0" />
     </joint>
     
     <transmission name="trans_xarm_6_joint">

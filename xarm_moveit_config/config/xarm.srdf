@@ -12,8 +12,14 @@
     <group name="xarm">
         <chain base_link="xarm_base_link" tip_link="xarm_2_link" />
     </group>
-    <group name="arm_end_effector">
+    <group name="xarm_end_effector">
         <link name="xarm_2_link" />
+    </group>
+    <group name="xarm_and_gripper">
+        <chain base_link="xarm_base_link" tip_link="xarm_gripper_tip" />
+    </group>
+    <group name="xarm_and_gripper_end_effector">
+        <link name="xarm_gripper_tip" />
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="Up" group="xarm">
@@ -30,8 +36,23 @@
         <joint name="xarm_5_joint" value="0" />
         <joint name="xarm_6_joint" value="0" />
     </group_state>
+    <group_state name="Up" group="xarm_and_gripper">
+        <joint name="xarm_2_joint" value="0" />
+        <joint name="xarm_3_joint" value="0" />
+        <joint name="xarm_4_joint" value="0" />
+        <joint name="xarm_5_joint" value="0" />
+        <joint name="xarm_6_joint" value="0" />
+    </group_state>
+    <group_state name="home" group="xarm_and_gripper">
+        <joint name="xarm_2_joint" value="0" />
+        <joint name="xarm_3_joint" value="-1.5" />
+        <joint name="xarm_4_joint" value="0" />
+        <joint name="xarm_5_joint" value="0" />
+        <joint name="xarm_6_joint" value="0" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="arm_ee" parent_link="xarm_2_link" group="arm_end_effector" parent_group="xarm" />
+    <end_effector name="xarm_ee" parent_link="xarm_2_link" group="xarm_end_effector" parent_group="xarm" />
+    <end_effector name="xarm_and_gripper_ee" parent_link="xarm_gripper_tip" group="xarm_and_gripper_end_effector" parent_group="xarm_and_gripper" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="xarm_2_link" link2="xarm_3_link" reason="Adjacent" />
     <disable_collisions link1="xarm_2_link" link2="xarm_4_link" reason="Never" />
