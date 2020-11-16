@@ -2,29 +2,41 @@
 
 import rospy
 import time
-from std_msgs.msg import String
 from control_msgs.msg import GripperCommandActionGoal
 
-def grasp():
+def move_gripper(ratio=0.0):
     gripper_command = GripperCommandActionGoal()
-    gripper_command.goal.command.position=0.0
+    gripper_command.header.seq = 0
+    gripper_command.goal.command.position=ratio
     rospy.loginfo(gripper_command)
     pub.publish(gripper_command)
 
-def open():
+def open_gripper():
     gripper_command = GripperCommandActionGoal()
+    gripper_command.header.seq = 0
     gripper_command.goal.command.position=1.0
+    rospy.loginfo(gripper_command)
+    pub.publish(gripper_command)
+
+def close_gripper():
+    gripper_command = GripperCommandActionGoal()
+    gripper_command.header.seq = 0
+    gripper_command.goal.command.position = 0.0
     rospy.loginfo(gripper_command)
     pub.publish(gripper_command)
 
 if __name__ == '__main__':
     try:
-        pub = rospy.Publisher('gripper_command', GripperCommandActionGoal, queue_size=10)
-        time.sleep(2)
-        rospy.init_node('xarm_commander', anonymous=True) 
-        open()
-        time.sleep(5)
-        grasp()
-        time.sleep(5)
+        rospy.init_node('xarm_commander', anonymous=True)
+
+        pub = rospy.Publisher('/xarm/controller/gripper/gripper_cmd/goal', GripperCommandActionGoal, queue_size=10)
+        time.sleep(1)
+        open_gripper()
+        time.sleep(3)
+        close_gripper()
+        time.sleep(3)
+        move_gripper(0.5)
+        time.sleep(3)
     except rospy.ROSInterruptException:
+        print "ROSInterruptException"
         pass

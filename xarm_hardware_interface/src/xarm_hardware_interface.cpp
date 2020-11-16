@@ -56,7 +56,6 @@ namespace xarm_hardware_interface
             position_joint_interface_.registerHandle(jointPositionHandle);
         }
 
-
         registerInterface(&joint_state_interface_);
         registerInterface(&position_joint_interface_);
         registerInterface(&positionJointSoftLimitsInterface);
