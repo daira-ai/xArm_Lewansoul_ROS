@@ -148,7 +148,33 @@ xarm:
     - SPARStwo
   projection_evaluator: joints(xarm_6_joint,xarm_5_joint)
   longest_valid_segment_fraction: 0.005
-arm_end_effector:
+xarm_end_effector:
+  default_planner_config: BiTRRT
+  planner_configs:
+    - SBL
+    - EST
+    - LBKPIECE
+    - BKPIECE
+    - KPIECE
+    - RRT
+    - RRTConnect
+    - RRTstar
+    - TRRT
+    - PRM
+    - PRMstar
+    - FMT
+    - BFMT
+    - PDST
+    - STRIDE
+    - BiTRRT
+    - LBTRRT
+    - BiEST
+    - ProjEST
+    - LazyPRM
+    - LazyPRMstar
+    - SPARS
+    - SPARStwo
+xarm_and_gripper:
   default_planner_config: BiTRRT
   planner_configs:
     - SBL

@@ -3,8 +3,13 @@ xarm:
   kinematics_solver_search_resolution: 0.005
   kinematics_solver_timeout: 0.005
   kinematics_solver_attempts: 3
-arm_end_effector:
+xarm_end_effector:
   kinematics_solver: kdl_kinematics_plugin/KDLKinematicsPlugin
   kinematics_solver_search_resolution: 0.005
   kinematics_solver_timeout: 0.005
   kinematics_solver_attempts: 3
+xarm_and_gripper:
+    kinematics_solver: kdl_kinematics_plugin/KDLKinematicsPlugin
+    kinematics_solver_search_resolution: 0.005
+    kinematics_solver_timeout: 0.005
+    kinematics_solver_attempts: 3

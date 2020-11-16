@@ -32,11 +32,12 @@ controller_list:
       - xarm_3_joint
       - xarm_2_joint
 
-  - name: /xarm/controller/gripper
-    action_ns: gripper_cmd
-    type: GripperCommand
-    default: true
-    parallel: false
-    joints:
-      - xarm_1_joint
+# The gripper will not be used for now
+#  - name: /xarm/controller/gripper
+#    action_ns: gripper_cmd
+#    type: GripperCommand
+#    default: true
+#    parallel: false
+#    joints:
+#      - xarm_1_joint
     
