@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import rospy
+import time
 from std_msgs.msg import String
 from control_msgs.msg import GripperCommandActionGoal
 
@@ -19,8 +20,11 @@ def open():
 if __name__ == '__main__':
     try:
         pub = rospy.Publisher('gripper_command', GripperCommandActionGoal, queue_size=10)
+        time.sleep(2)
         rospy.init_node('xarm_commander', anonymous=True) 
         open()
-        graps()
+        time.sleep(5)
+        grasp()
+        time.sleep(5)
     except rospy.ROSInterruptException:
         pass
