@@ -1,5 +1,8 @@
-Install
+Quick Start
 ===================
+
+Installation
+~~~~~~~~~~~~~
 
 System requirements
 --------------------
@@ -8,7 +11,7 @@ System requirements
 * ROS Melodic
 
 Install package dependencies
---------------------
+----------------------------
 
 .. prompt:: bash $
      
@@ -19,7 +22,7 @@ Install package dependencies
    sudo pip install hidapi
 
 Install HIDAPI
---------------------
+---------------
 
 #. Clone hidapi from  https://github.com/libusb/hidapi
 
@@ -40,7 +43,7 @@ Install HIDAPI
       sudo make install 
       
 Build xArm_Lewansoul_ROS
---------------------
+------------------------
 
 #. Clone this repository
 
@@ -56,7 +59,7 @@ Build xArm_Lewansoul_ROS
       
 
 Run 
-====
+~~~~
 
 #. Connect the robot to any USB port of your computer 
 
@@ -79,17 +82,16 @@ Run
    * If the robot is correctly detected you should see the following output:
    
      .. figure:: ../img/python_output.png
-        :width: 100%
-        :align: left
+        :width: 70%
+        :align: center
    
-   
-     and robot should move to a vertical position and then open and close the gripper followed by rotating its second and third joints.
+   * The robot should move to a vertical position and then open and close the gripper followed by rotating its second and third joints.
     
    * If the robot is not detected the following output would appear:
    
      .. figure:: ../img/python_output_error.png
-        :width: 100%
-        :align: left
+        :width: 70%
+        :align: center
     
      in this case check that the robot is on and that you are running from sudo mode, or try another USB port or cable. Also maybe restart the system.  
       
@@ -102,37 +104,3 @@ Run
    .. prompt:: bash $
     
       roslaunch xarm_launch xarm.launch
-     
-   
-       
-       
-    
- 
-
-   
-
-   
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
