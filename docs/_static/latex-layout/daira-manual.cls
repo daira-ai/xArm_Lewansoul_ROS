@@ -137,10 +137,10 @@
     \node[scale=.6,below left=239mm and 10mm] at (current page.north east) {%
         \includegraphics[width=0.50\linewidth]{Daira_Logo.png}};
     
-    \node[above,fill=black!85,minimum width={9cm},right=15mm, yshift=30mm, inner ysep=20pt, opacity=0.6,text opacity=1] at (current page.south west) {       
+    \node[above,fill=white!85,minimum width={9cm},right=15mm, yshift=30mm, inner ysep=20pt, opacity=0.6,text opacity=1] at (current page.south west) {       
         \begin{minipage}{8cm}
             \vspace*{0mm}
-            \color{white}\fontsize{14}{14}\selectfont%
+            \color{black}\fontsize{14}{14}\selectfont%
             \textl{Date of issue: \monthyeardate\today}
             \vspace*{4mm}
 
