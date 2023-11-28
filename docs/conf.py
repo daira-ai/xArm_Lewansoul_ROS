@@ -325,10 +325,10 @@ intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
 # sphinx-notfound-page
 # https://github.com/rtfd/sphinx-notfound-page
-notfound_context = {
-    'title': 'Page not found',
-    'body': "<h1>Page not found</h1>\n\nUnfortunately we couldn't find the content you were looking for.",
-}
+# notfound_context = {
+#     'title': 'Page not found',
+#     'body': "<h1>Page not found</h1>\n\nUnfortunately we couldn't find the content you were looking for.",
+# }
 
 # -- Options for Markdown output -------------------------------------------------
 # app setup hook
