@@ -33,7 +33,7 @@ Overview
    user_guide/1_1_introduction
 
 Software Description
---------
+---------------------
 
 * :doc:`/user_guide/1_2_software_description`
 
