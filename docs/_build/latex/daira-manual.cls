@@ -134,10 +134,10 @@
 
     \node[above=0,inner sep=0] at (current page.south) {\includegraphics[width=\paperwidth]{\@coverimage}};
 
-    \node[scale=.6,below left=240mm and 10mm] at (current page.north east) {%
+    \node[scale=.6,below left=239mm and 10mm] at (current page.north east) {%
         \includegraphics[width=0.50\linewidth]{Daira_Logo.png}};
     
-    \node[above,fill=white!85,minimum width={9cm},right=10mm, yshift=30mm, inner ysep=20pt, opacity=0.6,text opacity=1] at (current page.south west) {       
+    \node[above,fill=white!85,minimum width={9cm},right=15mm, yshift=30mm, inner ysep=20pt, opacity=0.6,text opacity=1] at (current page.south west) {       
         \begin{minipage}{8cm}
             \vspace*{0mm}
             \color{black}\fontsize{14}{14}\selectfont%
