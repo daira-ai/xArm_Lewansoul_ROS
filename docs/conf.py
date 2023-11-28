@@ -6,6 +6,10 @@
 # full list see the documentation:
 # http://www.sphinx-doc.org/en/master/config
 
+from datetime import date
+import os
+from pygit2 import Repository
+
 # -- Sphinx and Markdown configuration  -----------------------------------------------------
 import recommonmark
 from recommonmark.parser import CommonMarkParser
@@ -29,15 +33,18 @@ source_parsers = {
 # -- Project information -----------------------------------------------------
 
 project = u'xArm Lewansoul ROS'
-copyright = u'2020 Diestra AI'
-author = u'Diestra AI'
+current_year = str(date.today().year)
+copyright = u'2023-'+str(current_year)+', Daira AI'
+author = 'Daira AI'
 
-github_doc_root = 'https://github.com/diestra-ai/xArm_Lewansoul_ROS/tree/melodic-devel/docs/index.md'
+github_doc_root = 'https://https://github.com/daira-ai/xArm_Lewansoul_ROS/blob/melodic-devel/docs/index.rst'
 
 # The short X.Y version
-version = u''
+current_path = os.path.abspath('.')
+current_branch = Repository('.').head.shorthand
+version = "\detokenize{"+current_branch+"}"
 # The full version, including alpha/beta/rc tags
-release = u''
+release = current_branch
 
 
 # -- General configuration ---------------------------------------------------
@@ -88,36 +95,29 @@ pygments_style = 'sphinx'
 
 # -- Options for HTML output -------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
 html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#
-# html_theme_options = {}
+
+html_theme_options = {
+    'style_nav_header_background': '#fcfcfc',
+    'logo_only': True,
+    'display_version': False,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# Custom sidebar templates, must be a dictionary that maps document names
-# to template names.
-#
-# The default sidebars (for documents that don't match any pattern) are
-# defined by theme itself.  Builtin themes are using these templates by
-# default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
-# 'searchbox.html']``.
-#
-# html_sidebars = {}
-
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = 'img/favicon.ico'
+html_favicon = '_static/logos/faviconDaira.png'
+
+html_logo = "_static/logos/Daira_Logo.png"
 
 
 # -- Options for HTMLHelp output ---------------------------------------------
@@ -131,27 +131,145 @@ htmlhelp_basename = 'xArm_Lewansoul_ROS_doc'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    # 'papersize': 'letterpaper',
+    'papersize': 'letterpaper',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
-    # 'pointsize': '10pt',
-
-    # Additional stuff for the LaTeX preamble.
-    #
-    # 'preamble': '',
+    'pointsize': '10pt',
 
     # Latex figure (float) alignment
-    #
     # 'figure_align': 'htbp',
+    'fontpkg': r'''
+    \usepackage{fontspec}
+    \setsansfont{Roboto}[
+        Path = ,
+        Extension = .ttf,
+        UprightFont = *-Regular,
+        %-- Upright --%
+        FontFace={ul}{n}{Font=*-Thin},
+        FontFace={l}{n}{Font=*-Light},
+        FontFace={m}{n}{Font=*-Regular},
+        FontFace={mb}{n}{Font=*-Medium},
+        FontFace={b}{n}{Font=*-Bold},
+        FontFace={eb}{n}{Font=*-Black},
+        % %-- Italic --%
+        FontFace={ul}{it}{Font=*-ThinItalic},
+        FontFace={l}{it}{Font=*-LightItalic},
+        FontFace={m}{it}{Font=*-Italic},
+        FontFace={mb}{it}{Font=*-MediumItalic},
+        FontFace={b}{it}{Font=*-BoldItalic},
+        FontFace={eb}{it}{Font=*-BlackItalic},
+    ]
+    \setmainfont{Roboto}[
+        Path = ,
+        Extension = .ttf,
+        UprightFont = *-Light,
+        %-- Upright --%
+        FontFace={ul}{n}{Font=*-Thin},
+        FontFace={l}{n}{Font=*-Light},
+        FontFace={m}{n}{Font=*-Regular},
+        FontFace={mb}{n}{Font=*-Medium},
+        FontFace={b}{n}{Font=*-Bold},
+        FontFace={eb}{n}{Font=*-Black},
+        % %-- Italic --%
+        FontFace={ul}{it}{Font=*-ThinItalic},
+        FontFace={l}{it}{Font=*-LightItalic},
+        FontFace={m}{it}{Font=*-Italic},
+        FontFace={mb}{it}{Font=*-MediumItalic},
+        FontFace={b}{it}{Font=*-BoldItalic},
+        FontFace={eb}{it}{Font=*-BlackItalic},
+    ]
+    ''',
+
+    # Additional stuff for the LaTeX preamble.
+    'preamble': r'''
+    \titleformat{\chapter}[display]
+        {\flushright}
+        {\fontsize{96}{96}\selectfont\largetitlestyle\thechapter}
+        {0pt}
+        {\Huge\titlestyle}
+    \titlespacing*{\chapter}{0pt}{0pt}{2\baselineskip}
+
+    %% Formatting section titles and spacing
+    \titleformat{\section}
+        {\Large\titlestyle}
+        {\thesection.}
+        {5pt}
+        {}
+    \titlespacing*{\section}{0pt}{\baselineskip}{0pt}
+
+    %% Formatting subsections titles and spacing
+    \titleformat{\subsection}
+        {\large\titlestyle}
+        {\thesubsection.}
+        {5pt}
+        {}
+    \titlespacing*{\subsection}{0pt}{\baselineskip}{0pt}
+
+    %% Formatting subsubsections titles and spacing
+    \titleformat{\subsubsection}
+        {\titlestyle}
+        {}
+        {0pt}
+        {}
+    \titlespacing*{\subsubsection}{0pt}{\bigskipamount}{0pt}
+    ''',
+
+    'maketitle': r'''
+    \pagenumbering{Roman}
+    \begin{titlepage}
+
+    %% Defining the main parameters
+    
+    %\author{Daira AI}
+    %\subject{Manual}
+    \dairacopyright{Copyright © 2023-''' + current_year + r''' by Daira AI. All rights reserved}
+    \dairarelease{''' + "\detokenize{"+current_branch+"}" + r'''}
+
+    \coverimage{ManualCover.png}
+    \definecolor{title}{HTML}{D00070} % Color for title
+    \makecover
+
+    \end{titlepage}
+    \clearpage
+    \tableofcontents
+    \clearpage
+    \pagenumbering{arabic}
+    ''',
+
+    'sphinxsetup':'hmargin={0.7in,0.7in}, vmargin={1in,1in}',
+
+    'tableofcontents':' ',
 }
+
+latex_docclass = {
+   'manual': 'daira-manual',
+}
+latex_logo = '_static/logos/Daira_Logo.png'
+latex_engine = 'xelatex'
+latex_theme_path = ['_static']
+latex_additional_files = ['_static/latex-layout/daira-manual.cls', '_static/latex-layout/ManualCover.png',
+                          '_static/logo/Daira_Logo.png',
+                          '_static/latex-layout/fonts/Roboto/Roboto-Black.ttf',
+                          '_static/latex-layout/fonts/Roboto/Roboto-BlackItalic.ttf',
+                          '_static/latex-layout/fonts/Roboto/Roboto-Bold.ttf',
+                          '_static/latex-layout/fonts/Roboto/Roboto-BoldItalic.ttf',
+                          '_static/latex-layout/fonts/Roboto/Roboto-Italic.ttf',
+                          '_static/latex-layout/fonts/Roboto/Roboto-Light.ttf',
+                          '_static/latex-layout/fonts/Roboto/Roboto-LightItalic.ttf',
+                          '_static/latex-layout/fonts/Roboto/Roboto-Medium.ttf',
+                          '_static/latex-layout/fonts/Roboto/Roboto-MediumItalic.ttf',
+                          '_static/latex-layout/fonts/Roboto/Roboto-Regular.ttf',
+                          '_static/latex-layout/fonts/Roboto/Roboto-Thin.ttf',
+                          '_static/latex-layout/fonts/Roboto/Roboto-ThinItalic.ttf',
+                          ]
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'xArm_Lewansoul_ROS.tex', u'xArm Lewansoul ROS Documentation',
-     u'Diestra AI', 'manual'),
+     u'Daira AI', 'manual'),
 ]
 
 
@@ -203,24 +321,20 @@ epub_exclude_files = ['search.html']
 # -- Options for intersphinx extension ---------------------------------------
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
 # sphinx-notfound-page
 # https://github.com/rtfd/sphinx-notfound-page
-notfound_context = {
-    'title': 'Page Not Found',
-    'body': '''
-<h1>Page Not Found</h1>
-<p>Sorry, we couldn't find that page. Try going to the homepage.</p>
-''',
-}
+# notfound_context = {
+#     'title': 'Page not found',
+#     'body': "<h1>Page not found</h1>\n\nUnfortunately we couldn't find the content you were looking for.",
+# }
 
 # -- Options for Markdown output -------------------------------------------------
 # app setup hook
 def setup(app):
-    app.add_stylesheet('css/sphinx_prompt_css.css')
+    app.add_css_file('css/daira_docs_style.css')
     app.add_config_value('recommonmark_config', {
         'auto_toc_tree_section': 'Contents',
         'enable_eval_rst': True,
     }, True)
-    app.add_transform(AutoStructify)

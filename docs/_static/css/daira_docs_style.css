@@ -1,0 +1,89 @@
+/* CSS for sphinx-prompt */
+
+pre.highlight {
+  border: 1px solid #e1e4e5;
+  overflow-x: auto;
+  margin: 1px 0 24px 0;
+  padding: 12px 12px;
+  background-color: rgba(220, 220, 220, 0.2);
+}
+
+/* Tweak css for sphinx_prompt #5281 */
+pre.highlight span[class^="prompt"] {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+div.highlight {
+  background-color: rgba(220, 220, 220, 0.2);
+}
+
+div.highlight-bash {
+  background-color: rgba(220, 220, 220, 0.2);
+}
+
+/* CSS for sphinx-prompt */
+
+/* Sidebar */
+.wy-nav-side {
+  background: #fcfcfc;
+  border-right: 1px solid  #e1e4e5;
+}
+
+/* Sidebar Change color of font*/
+.wy-menu-vertical a {
+  color: #404040;
+}
+
+body {
+  font-family: Lato,proxima-nova,Helvetica Neue,Arial,sans-serif;
+}
+
+.rst-content .toctree-wrapper>p.caption, h1, h2, h3, h4, h5, h6, legend {
+  font-family: Lato,proxima-nova,Helvetica Neue,Arial,sans-serif;
+}
+
+/* Sidebar titles*/
+.wy-menu-vertical header,.wy-menu-vertical p.caption {
+  color: #118ab2;
+}
+
+/* Sidebar color when hover*/
+.wy-menu-vertical a:hover {
+  background-color: #d6d6d6;
+}
+
+.rst-content .wy-table td p,.rst-content .wy-table td ul,.rst-content .wy-table th p,.rst-content .wy-table th ul,.rst-content table.docutils td p,.rst-content table.docutils td ul,.rst-content table.docutils th p,.rst-content table.docutils th ul,.rst-content table.field-list td p,.rst-content table.field-list td ul,.rst-content table.field-list th p,.rst-content table.field-list th ul {
+  font-size: 10px;
+}
+
+/* Color of selected menu - selected item */
+.wy-menu-vertical li.toctree-l2.current>a,.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+  background: #f6f6f6
+}
+
+/* Color of selected menu - all items */
+.wy-menu-vertical li.current {
+  background: #f6f6f6
+}
+
+/* Color of selected menu - hover */
+.wy-menu-vertical li.current a:hover {
+  background: #d6d6d6
+}
+
+/* Color of selected menu borders - title */
+.wy-menu-vertical li.toctree-l1.current>a {
+  border-bottom: 1px solid #e1e4e5;
+  border-top: 1px solid #e1e4e5
+}
+
+/* fix paragraphs in grid tables getting a bigger fonts than regular cels */
+table.docutils td p {
+  font-size: 90% !important;
+}
+
+/* Fix the cell wrapping in the #@{ tables of the the readthedocs theme */
+table.docutils td {
+  white-space: normal;
+}
