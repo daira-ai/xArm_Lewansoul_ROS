@@ -39,6 +39,7 @@ Software Description
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
    :caption: Software description
    
    user_guide/1_2_software_description
